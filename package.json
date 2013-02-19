@@ -1,0 +1,12 @@
+{
+  "name": "clue",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "2.5.x",
+    "sqlite3": "2.1.x"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.2.x"
+  }
+}
