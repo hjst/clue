@@ -22,7 +22,7 @@ Building the dictionary
 
 The dictionary is derived from the [SCOWL](http://wordlist.sourceforge.net/) collection. There might be better sources, but SCOWL is at least reasonably well known, free, and has separate British/American lists. If you know of a more suitable source I would be very grateful to hear of it.
 
-Build the dictionary database by running ```make dictionary```, this will run an svn export of the latest SCOWL files, select the British ones and load them into the sqlite db. Check the ```Makefile``` for the gritty details.
+Build the dictionary database by running ```make dictionary.db```. This will grab the latest SCOWL files, select & filter the British ones, load them into an sqlite database and drop you at the prompt ready to play. Check the ```Makefile``` for the gritty details.
 
 Notes
 -----
