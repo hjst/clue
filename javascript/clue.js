@@ -3,11 +3,10 @@ var process_clue_response = function(data) {
   $('#clue-results').empty();
   $.each(data[0].results, function(key, value) {
     console.log(value);
-    $('#clue-results').append(
-      $('<ol>').html(
-        $('<li>').append(
-          $('<a>').attr('href', 'http://wordnik.com/words/'+value).text(value)
-        )
+    $('#clue-results').append($('<ol>'));
+    $('#clue-results ol').append(
+      $('<li>').append(
+        $('<a>').attr('href', 'http://wordnik.com/words/'+value).text(value)
       )
     );
   });
