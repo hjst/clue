@@ -1,7 +1,12 @@
-Clue is intended to scratch my own particular itch for a pattern-matching tool when stuck on crosswords. There are, of course, lots of these things already -- so why write another one? Clue's main differentiators are:
+Clue is a pattern-matching tool for when you're stuck on a crossword. Give it ```p_rs__c_o_s``` and it will find "perspicuous" for you. There are lots of these things already; why write another one?
 
 * Mobile-friendly (I usually only have a phone or iPad to hand)
 * British spelling variants (there are already enough US-centric tools)
+* Mostly for fun
+
+It's written in two parts: the server (little more than a node app wrapping a database query on the dictionary file) and an HTML/JS page that acts as the client.
+
+The ```master``` branch of this repo contains the server, and the ```gh-pages``` branch contains the HTML as an example interface.
 
 Requirements
 ------------
@@ -15,7 +20,7 @@ Installation
 1. ```git clone https://github.com/hjst/clue.git```
 2. ```cd clue```
 3. ```npm install``` (fetch & install node libs, if needed)
-4. ```node web.js``` (or equivalent, depending on your deploy target)
+4. ```node server.js``` (or equivalent, depending on your deploy target)
 
 Building the dictionary
 -----------------------
