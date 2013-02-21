@@ -8,9 +8,9 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Your Page Title Here :)</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<title>britclue - crossword assistant</title>
+	<meta name="description" content="Mobile-friendly crossword assistant with a penchant for British English.">
+	<meta name="author" content="Henry Todd">
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -37,6 +37,11 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
+  <script type="text/javascript">
+    function blank(a) { if(a.value == a.defaultValue) a.value = ""; }
+    function unblank(a) { if(a.value == "") a.value = a.defaultValue; }
+  </script> 
+
 </head>
 <body>
 
@@ -49,27 +54,36 @@
 
 	<div class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Skeleton</h1>
-			<h5>Version 1.2</h5>
+			<h1 class="remove-bottom" style="margin-top: 30px">britclue</h1>
+			<h5>The mobile-friendly crossword assistant with a penchant for British English</h5>
 			<hr />
 		</div>
 		<div class="one-third column">
-			<h3>About Skeleton?</h3>
-			<p>Skeleton is a small collection of well-organized CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop screen or an iPhone. It's based on a responsive grid, but also provides very basic CSS for typography, buttons, forms and media queries. Go ahead, resize this super basic page to see the grid in action.</p>
+      <h3>Give me a clue</h3>
+      <form action="http://britclue.heroku.com/search" method="get">
+        <input type="text" name="pattern" id="pattern"
+          value="p?rs??c?o?s"
+          onFocus="blank(this)" onBlur="unblank(this)">
+        <input type="submit" value="Find">
+      </form>
 		</div>
 		<div class="one-third column">
-			<h3>Three Core Principles</h3>
-			<p>Skeleton is built on three core principles:</p>
-			<ul class="square">
-				<li><strong>A Responsive Grid Down To Mobile</strong>: Elegant scaling from a browser to tablets to mobile.</li>
-				<li><strong>Fast to Start</strong>: It's a tool for rapid development with best practices</li>
-				<li><strong>Style Agnostic</strong>: It provides the most basic, beautiful styles, but is meant to be overwritten.</li>
-			</ul>
+			<h3>How does it work?</h3>
+      <p>Enter the letters you have, using question marks (?) for the letters you don't know.</p>
+      <p>e.g. <kbd>c?t</kbd> would find cat, cot, cut etc.</p>
+      <p><em>Tip:</em> you don't need to use a question mark, it can be any symbol which isn't a letter.</p>
 		</div>
-		<div class="one-third column">
-			<h3>Docs &amp; Support</h3>
-			<p>The easiest way to really get started with Skeleton is to check out the full docs and info at <a href="http://www.getskeleton.com">www.getskeleton.com.</a>. Skeleton is also open-source and has a <a href="https://github.com/dhgamache/skeleton">project on git</a>, so check that out if you want to report bugs or create a pull request. If you have any questions, thoughts, concerns or feedback, please don't hesitate to email me at <a href="mailto:hi@getskeleton.com">hi@getskeleton.com</a>.</p>
-		</div>
+    <div class="one-third column">
+      <h3>Wordnik</h3>
+      <form action="http://www.wordnik.com/words" method="get">
+        <input type="text" name="word[name]" id="word[name]">
+        <input type="submit" value="Go">
+      </form>
+      <p>
+        Find dictionary definitions, synonyms, etymologies, examples of usage etc.
+        We are not affiliated with Wordnik; they are simply our preferred online dictionary tool and provided here for convenience.
+      </p>
+      
 
 	</div><!-- container -->
 
