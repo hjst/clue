@@ -4,7 +4,7 @@ var process_clue_response = function(data) {
   $.each(data[0].results, function(key, value) {
     console.log(value);
     $('#clue-results').append(
-      $('<ol>').append(
+      $('<ol>').html(
         $('<li>').append(
           $('<a>').attr('href', 'http://wordnik.com/words/'+value).text(value)
         )
