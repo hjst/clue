@@ -28,7 +28,7 @@ function clue(request, response) {
       wraplog('ERROR: opening the dictionary.db file gave this msg: '+ error);
       response.writeHead(500, headers);
       payload.message('Uh oh, server error. Time to check the logs.');
-      response.end(JSON.stringify(payload));
+      response.end('[ '+ JSON.stringify(payload) +']');
     }
   });
 
@@ -55,14 +55,14 @@ function clue(request, response) {
       // completion - this function is called when all rows have been returned
       payload.status = "ok";
       payload.message = "Matches found: "+ row_count;
-      response.end(JSON.stringify(payload));
+      response.end('[ '+ JSON.stringify(payload) +']');
     });
   } else {
     // HACK: return generic 500 for anything we can't handle
     response.writeHead(500, headers);
     payload.message = "Requesting resource "+ url.parse(request.url).path +" is not supported.";
     wraplog('ERROR: '+ payload.message);
-    response.end(JSON.stringify(payload));
+    response.end('[ '+ JSON.stringify(payload) +']');
   }
 
   // convenience function: I like client ip for debugging
