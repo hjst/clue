@@ -17,7 +17,8 @@ function clue(request, response) {
   var payload = {
     status: "error",
     message: "",
-    results: []
+    results: [],
+    pattern: ""
   };
   var headers = {
     'Content-Type': 'application/json'
@@ -37,14 +38,14 @@ function clue(request, response) {
     url.parse(request.url, true).query.pattern !== undefined
   ){
     // valid request with a pattern param, so run an sqlite query
-    var pattern = url.parse(request.url, true).query.pattern;
-    wraplog('Search request for pattern: ' + pattern);
-    pattern = pattern.replace(/[^a-zA-Z]/g, "_"); // non-alpha chars -> sqlite wildcard
-    wraplog('Sanitised pattern: ' + pattern);
+    payload.pattern = url.parse(request.url, true).query.pattern;
+    wraplog('Search request for pattern: ' + payload.pattern);
+    payload.pattern = payload.pattern.replace(/[^a-zA-Z]/g, "_"); // non-alpha chars -> sqlite wildcard
+    wraplog('Sanitised pattern: ' + payload.pattern);
 
     var query = db.prepare('SELECT word FROM words WHERE word LIKE ?');
     response.writeHead(200, headers);
-    query.each(pattern, function(error, row){
+    query.each(payload.pattern, function(error, row){
       // callback - this function is called for every row result in the query
       if (error === null) {
         payload.results.push(row.word);
