@@ -54,8 +54,14 @@ function clue(request, response) {
       }
     },function(error, row_count) {
       // completion - this function is called when all rows have been returned
-      payload.status = "ok";
-      payload.message = "Found: "+ row_count;
+      if (row_count > 500) {
+        payload.message = "ERROR: too many results ("+ row_count +")"; 
+        wraplog(payload.message);
+        payload.results = []; // building the huge JSON object consumes all memory
+      } else {
+        payload.status = "ok";
+        payload.message = "Found: "+ row_count;
+      }
       response.end(jsonificate(payload));
     });
   } else {
