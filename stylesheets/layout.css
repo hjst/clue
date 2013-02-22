@@ -29,8 +29,9 @@ form[name="clue"] input[type="text"] {
 }
 
 #clue-status {
-  color: #bbb;
+  color: #aaa;
   float: right;
+  font-size: 10pt;
 }
 
 #clue-results {

@@ -30,7 +30,7 @@ $(document).ready( function() {
     $(this).children(':submit')
       .val('Finding...')
       .attr('disabled', true);
-    $('#clue-status').html('Searching for '+ $('input[name=pattern]').val());
+    $('#clue-status').html('Searching...');
 
     // make the jsonp call
     $.ajax({
