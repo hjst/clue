@@ -51,6 +51,10 @@ form[name="clue"] input[type="text"] {
   text-decoration: none;
   color: #333;
 }
+#clue-results ol li a:hover,
+#clue-results ol li a:active {
+  color: #5b85b1;
+}
 
 header {
   padding: 2em 0 2em 0;
