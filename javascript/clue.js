@@ -10,6 +10,9 @@ var process_clue_response = function(data) {
   });
   // we're finished, so reset the button
   $('#clue-status').html(data[0].message);
+  if (data[0].status == 'error') {
+    $('#clue-status').addClass('error');
+  } 
   $('form[name=clue]').children(':submit')
     .val('Find')
     .removeAttr('disabled');
@@ -30,7 +33,7 @@ $(document).ready( function() {
     $(this).children(':submit')
       .val('Finding...')
       .attr('disabled', true);
-    $('#clue-status').html('Searching...');
+    $('#clue-status').removeClass('error').html('');
 
     // make the jsonp call
     $.ajax({

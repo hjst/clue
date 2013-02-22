@@ -32,6 +32,10 @@ form[name="clue"] input[type="text"] {
   color: #aaa;
   float: right;
   font-size: 10pt;
+  padding: 1.4em 0.5em 0 0;
+}
+#clue-status.error {
+  color: #9F1E0B;
 }
 
 #clue-results {
@@ -73,13 +77,22 @@ header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
 ================================================== */
 
 /* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) {}
+@media only screen and (max-width: 959px) {
+}
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #clue-status {
+    padding: 1.4em 1em 0 0;
+  }
+}
 
 /* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 767px) {
+  #clue-status {
+    padding: 1.4em 1em 0 0;
+  }
+}
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -99,6 +112,9 @@ header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
   }
   form[name="clue"] > * {
     font-size: 150%;
+  }
+  #clue-status {
+    padding: 1.1em 1em 0 0;
   }
 }
 
@@ -121,6 +137,10 @@ header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
   form[name="clue"] > * {
     font-size: 150%;
   }
+  #clue-status {
+    padding: 1.1em 0.5em 0 0;
+  }
+
 }
 
 
