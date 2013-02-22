@@ -1,7 +1,7 @@
 // define the handler for the server response
 var process_clue_response = function(data) {
+  // build an ordered list from the search results
   $.each(data[0].results, function(key, value) {
-    console.log(value);
     $('#clue-results ol').append(
       $('<li>').append(
         $('<a>').attr('href', 'http://wordnik.com/words/'+value).text(value)
@@ -9,7 +9,7 @@ var process_clue_response = function(data) {
     );
   });
   // we're finished, so reset the button
-  $('#clue-status').html('');
+  $('#clue-status').html(data[0].message);
   $('form[name=clue]').children(':submit')
     .val('Find')
     .removeAttr('disabled');
@@ -19,7 +19,6 @@ var process_clue_response = function(data) {
 // bind the clue handler to the form
 $('form[name=clue]').submit(function(e){
   e.preventDefault();
-  console.log($(this).attr('action') + '?' + $(this).serialize());
   // clear out any previous results and prep the list
   $('#clue-results').empty();
   $('#clue-results').append($('<ol>'));
