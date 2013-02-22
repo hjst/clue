@@ -28,6 +28,29 @@ form[name="clue"] input[type="text"] {
   width: 100%;
 }
 
+#clue-status {
+  color: #bbb;
+  float: right;
+}
+
+#clue-results {
+  padding-left: 1em;
+}
+
+#clue-results ol {
+  margin-top: 1em;
+}
+
+#clue-results ol li {
+  margin-bottom: 1.5em;
+  color: #bbb;
+}
+
+#clue-results ol li a {
+  text-decoration: none;
+  color: #333;
+}
+
 header {
   padding: 2em 0 2em 0;
   text-align: right;
