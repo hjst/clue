@@ -20,6 +20,20 @@
 /* #Page Styles
 ================================================== */
 
+form[name="clue"] > * {
+  font-size: 200%;
+}
+
+form[name="clue"] input[type="text"] {
+  width: 100%;
+}
+
+header {
+  padding: 2em 0 2em 0;
+  text-align: right;
+}
+
+
 /* #Media Queries
 ================================================== */
 
