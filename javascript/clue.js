@@ -15,6 +15,8 @@ var process_clue_response = function(data) {
     .removeAttr('disabled');
   // stash the sanitised pattern in the URL so users can link to the results
   window.location.hash = '#'+ data[0].pattern;
+  // call the blur event on the input to trigger keyboard hiding on touchscreen devices
+  $('#pattern').blur();
 };
 
 $(document).ready( function() {
