@@ -55,7 +55,7 @@ function clue(request, response) {
     },function(error, row_count) {
       // completion - this function is called when all rows have been returned
       payload.status = "ok";
-      payload.message = "Matches found: "+ row_count;
+      payload.message = "Found: "+ row_count;
       response.end(jsonificate(payload));
     });
   } else {
