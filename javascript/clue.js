@@ -1,9 +1,9 @@
 // define the handler for the server response
 var process_clue_response = function(data) {
   $('#clue-results').empty();
+  $('#clue-results').append($('<ol>'));
   $.each(data[0].results, function(key, value) {
     console.log(value);
-    $('#clue-results').append($('<ol>'));
     $('#clue-results ol').append(
       $('<li>').append(
         $('<a>').attr('href', 'http://wordnik.com/words/'+value).text(value)
