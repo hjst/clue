@@ -53,37 +53,41 @@
 	<!-- Delete everything in this .container and get started on your own site! -->
 
 	<div class="container">
-		<header class="sixteen columns">
+    <div class="one column">&nbsp;</div>
+		<header class="fourteen columns" style="margin-left: auto; margin-right: auto;">
       <h1 class="remove-bottom">clue, <em>n.</em></h1>
       <h5><em>Brit.</em> <span class="IPA">klu:</span></h5>
 		</header>
-    <div class="sixteen columns clearfix">
-      <form class="nine columns alpha" name="clue" id="clue" action="http://britclue.heroku.com/search" method="get">
-        <input type="text" name="pattern" id="pattern"
-          autocapitalize="off" autocorrect="off" autocomplete="off"
-          value="p?rs??c?o?s"
-          onFocus="blank(this)" onBlur="unblank(this)">
-        <input type="submit" value="Find">&nbsp;&nbsp;<span id="clue-status"></span>
-        <div id="clue-results"></div>
-      </form>
-      <div class="one column omega">&nbsp;</div>
-      <div class="six columns">
-        <h3>How does it work?</h3>
-        <p>Enter the letters you have, using question marks (?) for the letters you don't know.</p>
-        <p>e.g. <kbd>c?t</kbd> would find cat, cot, cut etc.</p>
-        <p><em>Tip:</em> you don't need to use a question mark, it can be any symbol which isn't a letter.</p>
+    <div class="one column">&nbsp;</div>
+  </div>
+  <div class="container">
+    <div class="one column">&nbsp;</div>
+    <form class="eight columns" name="clue" id="clue" action="http://britclue.heroku.com/search" method="get">
+      <input type="text" name="pattern" id="pattern"
+        autocapitalize="off" autocorrect="off" autocomplete="off"
+        value="p?rs??c?o?s"
+        onFocus="blank(this)" onBlur="unblank(this)">
+      <input type="submit" value="Find">&nbsp;&nbsp;<span id="clue-status"></span>
+      <div id="clue-results"></div>
+    </form>
+    <div class="one column">&nbsp;</div>
+    <div class="five columns">
+      <h3>How does it work?</h3>
+      <p>Enter the letters you have, using question marks (?) for the letters you don't know.</p>
+      <p>e.g. <kbd>c?t</kbd> would find cat, cot, cut etc.</p>
+      <p><em>Tip:</em> you don't need to use a question mark, it can be any symbol which isn't a letter.</p>
 
-        <h3>Wordnik</h3>
-        <p>
-          Find dictionary definitions, synonyms, etymologies, examples of usage etc.
-          We are not affiliated with Wordnik; they are simply our preferred online dictionary tool and provided here for convenience.
-        </p>
-        <form action="http://www.wordnik.com/words" method="get">
-          <input type="text" name="word[name]" id="word[name]">
-          <input type="submit" value="Go" style="display:none">
-        </form>
-      </div>
+      <h3>Wordnik</h3>
+      <p>
+        Find dictionary definitions, synonyms, etymologies, examples of usage etc.
+        We are not affiliated with Wordnik; they are simply our preferred online dictionary tool and provided here for convenience.
+      </p>
+      <form action="http://www.wordnik.com/words" method="get">
+        <input type="text" name="word[name]" id="word[name]">
+        <input type="submit" value="Go" style="display:none">
+      </form>
     </div>
+    <div class="one column omega">&nbsp;</div>
       
 	</div><!-- container -->
 
