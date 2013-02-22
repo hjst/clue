@@ -57,6 +57,10 @@ header {
   text-align: right;
 }
 
+header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
+  font-family: 'Trocchi', serif;
+}
+
 
 /* #Media Queries
 ================================================== */
