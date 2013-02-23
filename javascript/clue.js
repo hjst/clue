@@ -8,14 +8,11 @@ var process_clue_response = function(data) {
       )
     );
   });
-  // we're finished, so reset the button
+  // display the server message/error
   $('#clue-status').html(data[0].message);
   if (data[0].status == 'error') {
     $('#clue-status').addClass('error');
   } 
-  $('form[name=clue]').children(':submit')
-    .val('Find')
-    .removeAttr('disabled');
   // stash the sanitised pattern in the URL so users can link to the results
   window.location.hash = '#'+ data[0].pattern;
   // call the blur event on the input to trigger keyboard hiding on touchscreen devices
@@ -39,7 +36,16 @@ $(document).ready( function() {
     $.ajax({
       url:$(this).attr('action') + '?' + $(this).serialize(),
       dataType:'jsonp',
-      success: process_clue_response
+      success: process_clue_response,
+      timeout: 10000
+    }).complete( function() {
+      // reset the button, no matter how the request ends
+      $('form[name=clue]').children(':submit').val('Find').removeAttr('disabled');
+    }).fail( function(jqxhr_obj, textStatus, error) {
+      // try to output something in the event of complete failure      
+      $('#clue-status').html(
+        "ERROR: "+ textStatus
+      ).addClass('error');
     });
   });
   // check for a pattern in the URL, auto-submit if found
