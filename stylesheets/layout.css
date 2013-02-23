@@ -26,6 +26,22 @@ form[name="clue"] > * {
 
 form[name="clue"] input[type="text"] {
   width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #222;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  padding: 0.5em;
+}
+
+form[name="clue"] input[type="text"]:focus,
+form[name="clue"] input[type="text"]:active {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #222;
 }
 
 #clue-status {
