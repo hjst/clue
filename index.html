@@ -8,7 +8,7 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>britclue - crossword assistant</title>
+	<title>Clue</title>
 	<meta name="description" content="Mobile-friendly crossword assistant with a penchant for British English.">
 	<meta name="author" content="Henry Todd">
 
@@ -38,11 +38,6 @@
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <script type="text/javascript">
-    function blank(a) { if(a.value == a.defaultValue) a.value = ""; }
-    function unblank(a) { if(a.value == "") a.value = a.defaultValue; }
-  </script> 
-
 </head>
 <body>
 
@@ -65,7 +60,7 @@
     <div class="one column">&nbsp;</div>
     <form class="eight columns" name="clue" id="clue" action="http://britclue.heroku.com/search" method="get">
       <input type="text" name="pattern" id="pattern"
-        autocapitalize="off" autocorrect="off" autocomplete="off"
+        autocapitalize="off" autocorrect="off" autocomplete="off" autofocus="autofocus"
         placeholder="clue?">
       <input type="submit" value="Find">&nbsp;&nbsp;<span id="clue-status"></span>
       <div id="clue-results"></div>
@@ -83,7 +78,7 @@
         We are not affiliated with Wordnik; they are simply our preferred online dictionary tool and provided here for convenience.
       </p>
       <form action="http://www.wordnik.com/words" method="get">
-        <input type="text" name="word[name]" id="word[name]">
+        <input type="text" name="word[name]" id="word[name]" placeholder="Define...">
         <input type="submit" value="Go" style="display:none">
       </form>
     </div>
