@@ -24,7 +24,9 @@ form[name="clue"] > * {
   font-size: 200%;
 }
 
-form[name="clue"] input[type="text"] {
+form[name="clue"] input[type="text"],
+form[name="clue"] input[type="text"]:focus,
+form[name="clue"] input[type="text"]:active {
   width: 100%;
   border-top: none;
   border-left: none;
@@ -34,14 +36,6 @@ form[name="clue"] input[type="text"] {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   padding: 0.5em;
-}
-
-form[name="clue"] input[type="text"]:focus,
-form[name="clue"] input[type="text"]:active {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #222;
 }
 
 #clue-status {
