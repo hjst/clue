@@ -108,12 +108,12 @@ header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+media only screen and (min-width: 480px) and (max-width: 767px) {
   form[name="clue"] input[type="text"] {
     width: 92%;
   }
   header {
-    padding: 1em 0 1em 0;
+    padding: 0.5em 0 0.5em 0;
     font-size: 14pt;
     margin: 0;
   }
@@ -137,7 +137,7 @@ header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
     width: 92%;
   }
   header {
-    padding: 1em 0 1em 0;
+    padding: 0;
     font-size: 14pt;
     margin: 0;
   }
