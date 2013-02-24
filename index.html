@@ -9,7 +9,7 @@
   ================================================== -->
 	<meta charset="utf-8">
 	<title>Clue</title>
-	<meta name="description" content="Mobile-friendly crossword assistant with a penchant for British English.">
+	<meta name="description" content="Mobile-friendly, British English crossword assistant.">
 	<meta name="author" content="Henry Todd">
 
 	<!-- Mobile Specific Metas
@@ -20,13 +20,14 @@
   <!-- CSS
   ================================================== -->
   <!-- dev stylesheets -->
+  <!--
   <link rel="stylesheet" href="stylesheets/base.css">
   <link rel="stylesheet" href="stylesheets/skeleton.css">
   <link rel="stylesheet" href="stylesheets/layout.css">
-
+  -->
   <!-- production stylesheet -->
-  <!-- <link rel="stylesheet" href="stylesheets/min/combined.css"> -->
-  <script src="javascript/jquery-1.9.1.min.js"></script>
+  <link rel="stylesheet" href="stylesheets/combined.min.css">
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -41,23 +42,23 @@
 </head>
 <body>
 
-
-
-	<!-- Primary Page Layout
-	================================================== -->
-
-	<!-- Delete everything in this .container and get started on your own site! -->
-
 	<div class="container">
+
     <div class="one column">&nbsp;</div>
+
 		<header class="fourteen columns" style="margin-left: auto; margin-right: auto;">
       <h1 class="remove-bottom">clue, <em>n.</em></h1>
       <h5><em>Brit.</em> <span class="IPA">klu:</span></h5>
 		</header>
+
     <div class="one column">&nbsp;</div>
+
   </div>
+
   <div class="container">
+
     <div class="one column">&nbsp;</div>
+
     <form class="eight columns" name="clue" id="clue" action="http://britclue.heroku.com/search" method="get">
       <input type="text" name="pattern" id="pattern"
         autocapitalize="off" autocorrect="off" autocomplete="off" autofocus="autofocus"
@@ -65,7 +66,9 @@
       <input type="submit" value="Find">&nbsp;&nbsp;<span id="clue-status"></span>
       <div id="clue-results"></div>
     </form>
+
     <div class="one column">&nbsp;</div>
+
     <div class="five columns">
       <p>Clue is a tool to help you when you're stuck on a crossword (or similar word puzzle).</p>
       <h3>How does it work?</h3>
@@ -83,24 +86,19 @@
         <input type="submit" value="Go" style="display:none">
       </form>
     </div>
+
     <div class="one column omega">&nbsp;</div>
       
 	</div><!-- container -->
 
-
-<!-- End Document
-================================================== -->
-
 <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-<!--
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="javascript/jquery-1.9.1.min.js"><\/script>')</script>
--->
 
 <!-- Production -->
-<!-- <script defer src="javascript/combined.min.js"></script> -->
+<script defer src="javascript/combined.min.js"></script>
 <!-- Development -->
-<script defer src="javascript/clue.js"></script>
+<!-- <script defer src="javascript/clue.js"></script> -->
 <!-- end scripts-->
 
 </body>

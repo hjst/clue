@@ -1,3 +1,37 @@
+$(document).ready( function() {
+  // bind the clue handler to the form
+  $('form[name=clue]').submit(function(e){
+    e.preventDefault();
+    // clear out any previous results and prep the list
+    $('#clue-results').empty().append($('<ol>'));
+    // disable the submit button and display the loading text
+    $(this).children(':submit')
+      .val('Finding...')
+      .attr('disabled', true);
+    $('#clue-status').removeClass('error').html('');
+    // make the jsonp call
+    $.ajax({
+      url:$(this).attr('action') + '?' + $(this).serialize(),
+      dataType:'jsonp',
+      success: process_clue_response,
+      timeout: 10000
+    }).complete( function() {
+      // reset the button, no matter how the request ends
+      $('form[name=clue]').children(':submit').val('Find').removeAttr('disabled');
+    }).fail( function(jqxhr_obj, textStatus, error) {
+      // try to output something in the event of complete failure      
+      $('#clue-status').html(
+        "ERROR: "+ textStatus
+      ).addClass('error');
+    });
+  });
+  // check for a pattern in the URL hash, auto-submit if found
+  if (window.location.hash) {
+    $('#pattern').val(window.location.hash.substr(1));
+    $('form[name=clue]').submit();
+  }
+});
+
 // define the handler for the server response
 var process_clue_response = function(data) {
   // build an ordered list from the search results
@@ -18,42 +52,6 @@ var process_clue_response = function(data) {
   // call the blur event on the input to trigger keyboard hiding on touchscreen devices
   $('#pattern').blur();
 };
-
-$(document).ready( function() {
-  // bind the clue handler to the form
-  $('form[name=clue]').submit(function(e){
-    e.preventDefault();
-    // clear out any previous results and prep the list
-    $('#clue-results').empty();
-    $('#clue-results').append($('<ol>'));
-    // disable the submit button and display the loading text
-    $(this).children(':submit')
-      .val('Finding...')
-      .attr('disabled', true);
-    $('#clue-status').removeClass('error').html('');
-
-    // make the jsonp call
-    $.ajax({
-      url:$(this).attr('action') + '?' + $(this).serialize(),
-      dataType:'jsonp',
-      success: process_clue_response,
-      timeout: 10000
-    }).complete( function() {
-      // reset the button, no matter how the request ends
-      $('form[name=clue]').children(':submit').val('Find').removeAttr('disabled');
-    }).fail( function(jqxhr_obj, textStatus, error) {
-      // try to output something in the event of complete failure      
-      $('#clue-status').html(
-        "ERROR: "+ textStatus
-      ).addClass('error');
-    });
-  });
-  // check for a pattern in the URL, auto-submit if found
-  if (window.location.hash) {
-    $('#pattern').val(window.location.hash.substr(1));
-    $('form[name=clue]').submit();
-  }
-});
 
 // handle the back/forward nav hash changes
 // see issue #15 https://github.com/hjst/clue/issues/15
