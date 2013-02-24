@@ -55,3 +55,23 @@ $(document).ready( function() {
   }
 });
 
+// handle the back/forward nav hash changes
+// see issue #15 https://github.com/hjst/clue/issues/15
+$(document).ready( function() {
+  if ("onhashchange" in window) {
+    window.onhashchange = hash_changed;
+  }
+});
+function hash_changed() {
+  var hash_pattern = location.hash.substr(1);
+  var form_pattern = $('#pattern').val().replace(/[^a-zA-Z]/g, "_");
+  if (hash_pattern === form_pattern) {
+    // the hashchange event has fired as part of the results page load
+    // do nothing
+  } else {
+    // the hashchange event has fired due to browser back/forward nav
+    // reload the results
+    $('#pattern').val(window.location.hash.substr(1));
+    $('form[name=clue]').submit();
+  }
+}
