@@ -24,10 +24,13 @@ form[name="clue"] > * {
   font-size: 200%;
 }
 
+form[name="clue"] input[type="text"] {
+  width: 100%;
+}
+
 form[name="clue"] input[type="text"],
 form[name="clue"] input[type="text"]:focus,
 form[name="clue"] input[type="text"]:active {
-  width: 100%;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -107,7 +110,7 @@ header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   form[name="clue"] input[type="text"] {
-    width: 95%;
+    width: 92%;
   }
   header {
     padding: 1em 0 1em 0;
@@ -131,7 +134,7 @@ header, h1, h2, h3, h4, h5, h6, #clue-results ol li a {
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
   form[name="clue"] input[type="text"] {
-    width: 95%;
+    width: 92%;
   }
   header {
     padding: 1em 0 1em 0;
