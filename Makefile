@@ -19,7 +19,7 @@ combine:
 		stylesheets/layout.css \
 	> $(BUILDDIR)/combined.css
 	# ordering isn't important in my case, so find is more convenient
-	find javascript/ -maxdepth 1 -name "*.js" -type f -exec cat '{}' > $(BUILDDIR)/combined.js \;
+	find javascript/ -maxdepth 1 -regex "[^.]+.js" -type f -exec cat '{}' > $(BUILDDIR)/combined.js \;
 
 squish:
 	java -jar $(YUIJAR) $(BUILDDIR)/combined.css -o ./stylesheets/combined.min.css
