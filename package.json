@@ -1,6 +1,6 @@
 {
   "name": "clue",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "dependencies": {
     "sqlite3": "2.1.x"
   },
