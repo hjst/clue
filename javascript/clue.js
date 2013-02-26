@@ -42,7 +42,6 @@ var process_clue_response = function(data) {
           text: value,
           href: 'http://wordnik.com/words/'+value,
           click: function(e) {
-            console.log('e: ', e);
             if ($(e.target).data('wordnik_fetched')) {
               // if the wordnik API lookup has already been done,
               // use the event default and follow the anchor href

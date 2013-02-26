@@ -1,14 +1,9 @@
 function wordnik_api_lookup(search_result) {
   // search_result is a jQuery object reference for the DOM node of the search result
-  $(search_result).append(
-    $('<div id="loader">').append(
-      $('<div id="bowl_ringG">').append(
-        $('<div class="ball_holderG">').append(
-          $('<div class="ballG">')
-        )
-      )
-    )
-  );
+  $(search_result).append( $('<div id="loader">').append(
+    $('<div id="bowl_ringG">').append( $('<div class="ball_holderG">').append(
+    $('<div class="ballG">'))))); // add the loader divs
+
   $.ajax({
     url:'http://api.wordnik.com/v4/word.json/'+ $(search_result).text() +'/definitions',
     dataType:'jsonp',

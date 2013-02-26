@@ -12,5 +12,5 @@ $(document).ready( function() {
       url:$('form[name=clue]').attr('action') + '?pattern=_',
       dataType:'jsonp',
       timeout: 10000
-    }).complete( function() { console.log("Heroku hack primer query succeeded") } );
+    });
 });
