@@ -38,7 +38,14 @@ var process_clue_response = function(data) {
   $.each(data[0].results, function(key, value) {
     $('#clue-results ol').append(
       $('<li>').append(
-        $('<a>').attr('href', 'http://wordnik.com/words/'+value).text(value)
+        $('<a>', {
+          text: value,
+          href: 'http://wordnik.com/words/'+value,
+          click: function(e) {
+            e.preventDefault();
+            wordnik_api_lookup($(this));
+          }
+        })
       )
     );
   });
