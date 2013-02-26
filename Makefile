@@ -17,6 +17,7 @@ combine:
 		stylesheets/base.css \
 		stylesheets/skeleton.css \
 		stylesheets/layout.css \
+		stylesheets/loader.css \
 	> $(BUILDDIR)/combined.css
 	# ordering isn't important in my case, so find is more convenient
 	find javascript/ -maxdepth 1 -regex "[^.]+.js" -type f -exec cat '{}' > $(BUILDDIR)/combined.js \;

@@ -73,6 +73,42 @@ form[name="clue"] input[type="text"]:active {
   color: #5b85b1;
 }
 
+#clue-results ol li ol {
+  padding: 0.5em 0;
+  margin: 0;
+  list-style-type: lower-roman;
+  list-style-position: outside;
+}
+
+#clue-results ol li ol li {
+  padding: 0.5em 0;
+  margin: 0;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  color: #999;
+}
+
+em.def-part {
+  color: #aaa;
+  font-size: 0.8em;
+}
+
+#clue-results span.def-text {
+  font-family: 'Trocchi', serif;
+  color: #666;
+}
+
+span.def-attrib {
+  font-size: 10pt;
+  color: #ccc;
+}
+
+p.wordnik-msg {
+  margin: 0;
+  padding: 0.5em 0;
+  font-size: 0.8em;
+}
+
 header {
   padding: 2em 0 2em 0;
   text-align: right;

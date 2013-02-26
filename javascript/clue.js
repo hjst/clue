@@ -42,8 +42,16 @@ var process_clue_response = function(data) {
           text: value,
           href: 'http://wordnik.com/words/'+value,
           click: function(e) {
-            e.preventDefault();
-            wordnik_api_lookup($(this));
+            console.log('e: ', e);
+            if ($(e.target).data('wordnik_fetched')) {
+              // if the wordnik API lookup has already been done,
+              // use the event default and follow the anchor href
+              return true;
+            } else {
+              e.preventDefault();
+              wordnik_api_lookup($(this));
+              $(this).data('wordnik_fetched', true);
+            }
           }
         })
       )
