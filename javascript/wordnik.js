@@ -15,7 +15,7 @@ function wordnik_api_lookup(search_result) {
         console.log('wordnik_response: ', value.text);
       });
       $(search_result).parent().append(
-        $('<ul>').append(defs));
+        $('<ol>').append(defs));
     },
     timeout: 10000
   }).complete( function() {
