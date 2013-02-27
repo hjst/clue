@@ -29,6 +29,15 @@ The dictionary is derived from the [SCOWL](http://wordlist.sourceforge.net/) col
 
 Build the dictionary database by running ```make dictionary.db```. This will grab the latest SCOWL files, select & filter the British ones, load them into an sqlite database and drop you at the prompt ready to play. Check the ```Makefile``` for the gritty details.
 
+Credits for the HTML interface
+------------------------------
+
+The HTML example interface in the ```gh-pages``` branch uses the following bits from other people:
+
+* Dave Gamache's [Skeleton](https://github.com/dhgamache/Skeleton) boilerplate
+* [Detective](http://thenounproject.com/noun/detective/#icon-No4632) designed by [Simon Child](http://thenounproject.com/Simon%20Child) from The Noun Project
+* CSS loader animation courtesy of [cssload.net](http://cssload.net)
+
 Notes
 -----
 I originally wrote clue to use ```grep``` but then wasn't sure where it was going to live and thought perhaps *some* effort to make it portable might not be a terrible idea. Given the exclusively read-only nature of the thing, sqlite was an obvious choice. My crude benchmarks showed that ```LIKE``` in sqlite3 was roughly even in performance with ```grep -i``` on this dataset, which was good enough for me.
