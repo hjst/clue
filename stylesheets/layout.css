@@ -114,6 +114,14 @@ header {
   text-align: right;
 }
 
+h1 {
+  /* Detective designed by Simon Child from The Noun Project */
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20d%3D%22M93.296%2C58.818c-0.684%2C5.245-2.63%2C9.416-7.309%2C9.323c-8.756-0.446-4.741-15.062-13.25-19.455%20%20c0.048%2C0.167%2C0.064%2C0.37%2C0.031%2C0.621c-0.099%2C0.751-1.62%2C0.161-1.706%2C3.026c-0.047%2C1.555%2C1.814%2C3.724-1.295%2C5.692%20%20c-3.108%2C1.969-13.373-3.283-15.579%2C5.441c5.356%2C1.352%2C2.847%2C4.781%2C5.33%2C9.873c2.987%2C6.122%2C6.788%2C8.596%2C2.308%2C6.505%20%20c-1.646-0.768%2C3.584%2C3.435%2C5.973%2C10.005c2.389%2C6.569%2C3.3%2C9.557%2C3.3%2C9.557L7.328%2C99.406c0%2C0-0.507-15.951%2C8.66-24.189%20%20c4.319-3.882%2C5.793-5.115%2C5.077-5.673c-1.345-1.046%2C8.047-15.519%2C11.182-13.429c0.109%2C0.073%2C0.264%2C0.17%2C0.459%2C0.292%20%20c1.079-3.356%2C0.903-7.022-1.828-10.771c-1.249-1.715-2.302-3.556-3.146-5.482c-13.496%2C11.172-4.607-6.646-4.607-6.646%20%20s0.993-1.746%2C1-12.785c0.783-5.804%2C4.656-11.12%2C12.336-14.882c-0.534-0.11-1.094-0.156-1.673-0.129l0.584-2.184%20%20c1.11-0.053%2C2.11%2C0.202%2C3.001%2C0.67c0.15-1.226%2C0.633-2.354%2C1.602-3.267l3.001%2C0.652c-0.693%2C0.654-1.221%2C1.432-1.599%2C2.282%20%20C51.811%2C0.935%2C59.389%2C2.883%2C64.04%2C7.753c6.826%2C9.084%2C8.325%2C9.756%2C8.325%2C9.756s19.296%2C10.042-2.413%2C7.87%20%20c0.503%2C0.984%2C1.498%2C2.369%2C1.147%2C3.016c-0.913%2C1.682-1.331%2C2.558%2C0.279%2C4.838c1.048%2C1.485%2C4.073%2C5.943%2C4.747%2C7.174%20%20c0.939%2C1.714-4.479%2C1.768-4.003%2C3.071c0.217%2C0.596%2C0.946%2C2.096%2C1.182%2C2.678c0.181%2C0.446-0.432%2C0.789-0.905%2C1.106%20%20c3.842%2C1.069%2C6.809%2C3.931%2C8.38%2C9.369c1.504%2C5.206%2C2.956%2C5.553%2C3.58%2C5.58c1.302-0.064%2C1.634-1.739%2C1.719-4.178%20%20c0.095-0.507%2C1.739-0.75%2C3.712-0.543c1.991%2C0.209%2C3.56%2C0.798%2C3.507%2C1.318L93.296%2C58.818z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 77% 50%;
+  background-size: 1em;
+}
+
 .IPA { color: #5b85b1; }
 .IPA:before, .IPA:after { content: "/"; }
 
@@ -246,12 +254,19 @@ transform:rotate(360deg)}
   #clue-status {
     padding: 1.4em 1em 0 0;
   }
+  h1 {
+    background-position: 75% 50%;
+    font-size: 30pt;
+  }
 }
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
   #clue-status {
     padding: 1.4em 1em 0 0;
+  }
+  h1 {
+    background-position: 53% 50%;
   }
 }
 
@@ -262,10 +277,10 @@ media only screen and (min-width: 480px) and (max-width: 767px) {
   }
   header {
     padding: 0.5em 0 0.5em 0;
-    font-size: 14pt;
     margin: 0;
   }
   header h1 {
+    background-position: 60% 50%;
     font-size: 1.5em;
     line-height: 1em;
     margin: 0;
@@ -290,6 +305,7 @@ media only screen and (min-width: 480px) and (max-width: 767px) {
     margin: 0;
   }
   header h1 {
+    background-position: 60% 50%;
     font-size: 1.5em;
     line-height: 1em;
     margin: 0;
