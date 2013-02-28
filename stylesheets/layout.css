@@ -34,10 +34,13 @@ form[name="clue"] input[type="text"]:active {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #222;
+  border-bottom: 2px solid #777;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
   padding: 0.5em;
 }
 
