@@ -1,13 +1,13 @@
 BUILDDIR = .build
 SCOWLZIPURL = http://sourceforge.net/projects/wordlist/files/latest/download?source=files
-YUIURL = http://yui.zenfs.com/releases/yuicompressor/yuicompressor-2.4.7.zip
-YUIJAR = $(BUILDDIR)/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar
+YUIURL = https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar
+YUIJAR = $(BUILDDIR)/yuicompressor.jar
 
 all: combine squish
 
 build-init: clean
 	mkdir $(BUILDDIR);
-	cd $(BUILDDIR); wget $(YUIURL) -O yui.zip; unzip yui.zip;
+	cd $(BUILDDIR); curl -L $(YUIURL) -C - --cookie . -o yuicompressor.jar;
 
 clean:
 	rm -rf $(BUILDDIR);
