@@ -11,8 +11,8 @@ The ```master``` branch of this repo contains the server, and the ```gh-pages```
 Requirements
 ------------
 
-* [node.js](http://nodejs.org/) (developed on v0.8.20)
-* [sqlite3 for node](https://npmjs.org/package/sqlite3) (developed with v2.1.5)
+* [node.js](http://nodejs.org/) (tested with v0.8.20 – v0.10.32)
+* [sqlite3 for node](https://npmjs.org/package/sqlite3) (tested with v2.1.5 – v3.0.2)
 
 Installation
 ------------
@@ -37,6 +37,7 @@ The HTML example interface in the ```gh-pages``` branch uses the following bits 
 * Dave Gamache's [Skeleton](https://github.com/dhgamache/Skeleton) boilerplate
 * [Detective](http://thenounproject.com/noun/detective/#icon-No4632) designed by [Simon Child](http://thenounproject.com/Simon%20Child) from The Noun Project
 * CSS loader animation courtesy of [cssload.net](http://cssload.net)
+* [jQuery 2](http://jquery.com/)
 
 Notes
 -----
