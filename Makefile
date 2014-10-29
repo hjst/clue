@@ -18,8 +18,12 @@ combine:
 		stylesheets/skeleton.css \
 		stylesheets/layout.css \
 	> $(BUILDDIR)/combined.css
-	# ordering isn't important in my case, so find is more convenient
-	find javascript/ -maxdepth 1 -regex "[^.]+.js" -type f -exec cat '{}' > $(BUILDDIR)/combined.js \;
+	# CAUTION: make sure you only have one version of jQuery in the javascript dir
+	cat \
+		javascript/jquery-*.min.js \
+		javascript/heroku_hack.js \
+		javascript/clue.js \
+	> $(BUILDDIR)/combined.js
 
 squish:
 	java -jar $(YUIJAR) $(BUILDDIR)/combined.css -o ./stylesheets/combined.min.css
