@@ -9,10 +9,9 @@ $(document).ready( function() {
       .val('Finding...')
       .attr('disabled', true);
     $('#clue-status').removeClass('error').html('');
-    // make the jsonp call
+    // make the call
     $.ajax({
       url:$(this).attr('action') + '?' + $(this).serialize(),
-      dataType:'jsonp',
       success: process_clue_response,
       timeout: 10000
     }).complete( function() {
@@ -33,9 +32,9 @@ $(document).ready( function() {
 });
 
 // define the handler for the server response
-var process_clue_response = function(data) {
+var process_clue_response = function(json_response) {
   // build an ordered list from the search results
-  $.each(data[0].results, function(key, value) {
+  $.each(json_response.results, function(key, value) {
     $('#clue-results ol').append(
       $('<li>').append(
         $('<a>', {
@@ -57,12 +56,12 @@ var process_clue_response = function(data) {
     );
   });
   // display the server message/error
-  $('#clue-status').html(data[0].message);
-  if (data[0].status == 'error') {
+  $('#clue-status').html(json_response.message);
+  if (json_response.status == 'error') {
     $('#clue-status').addClass('error');
   } 
   // stash the sanitised pattern in the URL so users can link to the results
-  window.location.hash = '#'+ data[0].pattern;
+  window.location.hash = '#'+ json_response.pattern;
   // call the blur event on the input to trigger keyboard hiding on touchscreen devices
   $('#pattern').blur();
 };

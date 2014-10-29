@@ -9,8 +9,7 @@
 // will return results much quicker.
 $(document).ready( function() {
     $.ajax({
-      url:$('form[name=clue]').attr('action') + '?pattern=_',
-      dataType:'jsonp',
+      url:$('form[name=clue]').attr('action') + '?pattern=herokuhack',
       timeout: 10000
     });
 });
