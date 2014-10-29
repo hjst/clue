@@ -6,7 +6,6 @@ function wordnik_api_lookup(search_result) {
 
   $.ajax({
     url:'http://api.wordnik.com/v4/word.json/'+ $(search_result).text() +'/definitions',
-    dataType:'jsonp',
     data: {
       api_key: 'e60b288bc3c06fdc220080d9f7a07a21d14a31af52b8ad97c',
     },

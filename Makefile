@@ -23,6 +23,7 @@ combine:
 		javascript/jquery-*.min.js \
 		javascript/heroku_hack.js \
 		javascript/clue.js \
+		javascript/wordnik.js \
 	> $(BUILDDIR)/combined.js
 
 squish:
