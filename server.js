@@ -21,7 +21,8 @@ function clue(request, response) {
     pattern: ""
   };
   var headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
   };
   // open the database file; check for errors
   var db = new sqlite3.Database('dictionary.db', sqlite3.PEN_READWRITE, function(error){
